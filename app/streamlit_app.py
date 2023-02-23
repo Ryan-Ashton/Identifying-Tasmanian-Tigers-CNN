@@ -8,8 +8,13 @@ from PIL import Image
 import os
 from image_predictor import ImagePredictor
 
-# print("This is the path: " + os.path.abspath('app\model\saved_trained_model.h5'))
-predictor = ImagePredictor('app\model\saved_trained_model.h5')
+import wget
+
+# Download the h5 model file from GitHub
+url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_model.h5"
+filename = wget.download(url)
+# predictor = ImagePredictor('app\model\saved_trained_model.h5')
+predictor = ImagePredictor(filename)
 
 
 
