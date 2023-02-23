@@ -8,7 +8,7 @@ from PIL import Image
 
 from image_predictor import ImagePredictor
 
-predictor = ImagePredictor('../deep_learning_model_creation/saved_trained_model/assets/saved_trained_model.h5')
+predictor = ImagePredictor('../model/saved_trained_model.h5')
 
 # Create a function to run the app
 def run():
