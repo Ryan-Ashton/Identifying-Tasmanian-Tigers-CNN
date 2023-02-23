@@ -8,7 +8,15 @@ from PIL import Image
 import os
 from image_predictor import ImagePredictor
 
-predictor = ImagePredictor(os.path.abspath('model/saved_trained_model.h5'))
+# predictor = ImagePredictor(os.path.abspath('model/saved_trained_model.h5'))
+
+
+
+file_path = "model/saved_trained_model.h5"
+absolute_path = os.path.abspath(file_path)
+
+print(absolute_path)
+
 
 # Create a function to run the app
 def run():
