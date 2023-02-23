@@ -4,107 +4,58 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.models import load_model
 from PIL import Image
-import os
-import cv2
-import time
-import streamlit.components.v1 as components
 
-# Load the model
-model = load_model('C:/Users/ryana/OneDrive/Documents/Python Scripts/tasmanian_tiger_vf/deep_learning_model_creation/saved_trained_model/assets/saved_trained_model.h5')
+from ImagePredictor import ImagePredictor
 
-# Create a function to load an image
-
-def load_image(img_path, img_shape=224):
-    # Convert img_path to a string
-    img_path = str(img_path)
-
-    # Join the img_path to the base directory
-    img_path = "C:/Users/ryana/OneDrive/Documents/Python Scripts/tasmanian_tiger_vf/deep_learning_model_creation/random_tests/received_756598882554027.jpeg"
-    # img_path = os.path.join(base_dir, img_path)
-
-    # Check if the file exists before reading it
-    if not os.path.exists(img_path):
-        st.write("Invalid image path!")
-        return None
-
-    # Load the image file as a tensor
-    img = tf.io.read_file(img_path)
-    
-    # Decode image into tensor
-    img = tf.io.decode_image(img, channels=3)
-
-    
-    # Resize the image
-    img = tf.image.resize(img, [img_shape, img_shape])
-
-    img = tf.reshape(img, shape=(1, 224, 224, 3))
-
-    return img
-
-
-
-# Create a function to predict the image
-# Create a function to predict the image
-def predict(img):
-    img = load_image(img)
-    if img is None:
-        return None
-
-    prediction = model.predict(img)
-    return prediction
-
-
-# Create a function to display the image
-def display_image(img):
-    img = Image.open(img)
-    st.image(img, use_column_width=True)
-
-# Create a function to display the result
-def display_result(prediction):
-    st.write(f"The probability of this being a Tasmania Tiger is: {str(round(prediction[0][0] * 100))}%")
-    # if prediction == 0:
-    #     st.write(str(prediction))
-    #     st.write('The image is a Tasmanian Tiger')
-    # else:
-    #     st.write(str(prediction))
-    #     st.write('The image is not a Tasmanian Tiger')
+predictor = ImagePredictor('../deep_learning_model_creation/saved_trained_model/assets/saved_trained_model.h5')
 
 # Create a function to run the app
 def run():
     # Add a title
     st.title('Tasmanian Tiger Image Classifier')
 
-    # Add a sidebar
-    st.sidebar.header('User Input Features')
+    st.subheader("This application utilizes AI to calculate the probability of an image containing a Tasmanian Tiger.")
+
+    # Background
+    st.title("Background")
+
+    st.write("The Tasmanian Tiger (Thylacine) has been considered extinct for over 50 years, however, many sightings of the animal have been reported since then.")
+
+    st.write("To understand more about this topic please watch the following video:")
+
+    st.video("https://www.youtube.com/watch?v=B9t0Buy4Ht4&t")
+
+    # Methodology
+    st.title("How the App Works")
+
+    # Write a description of that App's function
+    st.write("Users who have taken a picture of the Tasmanian Tiger but are uncertain about its identity can utilise the app to receive a probability score. The probability score corresponds to the likelihood of the image containing a Tasmanian Tiger, with a higher score indicating a greater likelihood.")
+
+    # Add a header for the Image Classifier
+    st.markdown('## Please upload your photo to see it contains a Tasmanian Tiger.')
 
     # Add a file uploader
-    uploaded_file = st.sidebar.file_uploader('Upload an image of a Tasmanian Tiger', type=["png", "jpeg", "jpg"])
+    uploaded_file = st.file_uploader('Please note that no photos will be saved on our side', type=["png", "jpeg", "jpg"])
     
     # Convert the uploaded file to a PIL image
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-
-        # Convert the PIL image to a numpy array
-        image_array = np.array(image)
-
-        # Convert the numpy array to a Tensor
-        image_tensor = tf.convert_to_tensor(image_array)
+        image = np.array(image)
+        st.write("Please press the Classify button to see the result.")
 
         # Add a button
-        if st.sidebar.button('Classify'):
+        if st.button('Classify'):
             # Display the image
             st.image(image)
 
             # Make a prediction
-            prediction = predict(image_tensor)
+            prediction = predictor.predict(image)
 
             # Display the result
-            display_result(prediction)
+            predictor.display_result(prediction)
+            predictor.result_description(prediction)
+
 
 # Run the app
 if __name__ == '__main__':
