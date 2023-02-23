@@ -49,7 +49,7 @@ def run():
     # Convert the uploaded file to a PIL image
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        image = np.array(image)
+        image = np.array(image.convert('RGB'))
         st.write("Please press the Classify button to see the result.")
 
         # Add a button
