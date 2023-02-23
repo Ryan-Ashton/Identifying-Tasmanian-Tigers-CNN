@@ -6,7 +6,7 @@ import seaborn as sns
 import tensorflow as tf
 from PIL import Image
 
-from ImagePredictor import ImagePredictor
+from image_predictor import ImagePredictor
 
 predictor = ImagePredictor('../deep_learning_model_creation/saved_trained_model/assets/saved_trained_model.h5')
 
@@ -56,6 +56,8 @@ def run():
             predictor.display_result(prediction)
             predictor.result_description(prediction)
 
+    # st.subheader("Examples of testing images:")
+    # st.image('../deep_learning_model_creation/tests.png')
 
 # Run the app
 if __name__ == '__main__':
