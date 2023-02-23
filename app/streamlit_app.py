@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
 from PIL import Image
-
+import os
 from image_predictor import ImagePredictor
 
-predictor = ImagePredictor('model/saved_trained_model.h5')
+predictor = ImagePredictor(os.path.abspath('model/saved_trained_model.h5'))
 
 # Create a function to run the app
 def run():
