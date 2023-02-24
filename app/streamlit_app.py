@@ -32,7 +32,7 @@ def run():
 
     st.write("To understand more about this topic please watch the following video:")
 
-    st.video("https://www.youtube.com/watch?v=6Iz-LxZXpqQ")
+    st.video("https://www.youtube.com/watch?v=B9t0Buy4Ht4&t")
 
     # Methodology
     st.title("How the App Works")
