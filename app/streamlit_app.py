@@ -11,11 +11,19 @@ from image_predictor import ImagePredictor
 import wget
 
 # Download the h5 model file from GitHub
-url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_modelv2.h5"
-filename = wget.download(url)
-# predictor = ImagePredictor('app\model\saved_trained_model.h5')
-predictor = ImagePredictor(filename)
+@st.cache_resource
+def model_loading():
+    url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_modelv2.h5"
+    filename = wget.download(url)
+    predictor = ImagePredictor(filename)
+    return predictor
 
+# url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_modelv2.h5"
+# filename = wget.download(url)
+# # predictor = ImagePredictor('app\model\saved_trained_model.h5')
+# predictor = ImagePredictor(filename)
+
+predictor = model_loading()
 
 
 # Create a function to run the app
