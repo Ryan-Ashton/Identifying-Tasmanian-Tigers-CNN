@@ -13,7 +13,7 @@ import wget
 # Download the h5 model file from GitHub
 @st.cache_resource
 def model_loading():
-    url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_modelv2.h5"
+    url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_modelv3.h5"
     filename = wget.download(url)
     predictor = ImagePredictor(filename)
     return predictor
