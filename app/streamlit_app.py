@@ -18,10 +18,6 @@ def model_loading():
     predictor = ImagePredictor(filename)
     return predictor
 
-# url = "https://raw.githubusercontent.com/Ryan-Ashton/Identifying-Tasmanian-Tigers-CNN/main/app/model/saved_trained_modelv2.h5"
-# filename = wget.download(url)
-# # predictor = ImagePredictor('app\model\saved_trained_model.h5')
-# predictor = ImagePredictor(filename)
 
 predictor = model_loading()
 
@@ -72,8 +68,6 @@ def run():
             predictor.display_result(prediction)
             predictor.result_description(prediction)
 
-    # st.subheader("Examples of testing images:")
-    # st.image('../deep_learning_model_creation/tests.png')
 
 # Run the app
 if __name__ == '__main__':
@@ -82,5 +76,4 @@ if __name__ == '__main__':
 
 
 
-# conda create -n tastiger python=3.7
 
