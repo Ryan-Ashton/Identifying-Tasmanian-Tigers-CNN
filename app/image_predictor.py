@@ -39,21 +39,21 @@ class ImagePredictor:
 
     def result_description(self, prediction):
         if prediction[0][0] < 0.1:
-            return st.write("At a probability score of < 10%, this image is unlikely to contain a Tasmanian Tiger.")
+            return st.write("At a probability score of < 10%, this image is unlikely to contain a Tasmanian Tiger. Or, there just isn't enough information in the picture to make a proper classification.")
         elif prediction[0][0] < 0.2 and prediction[0][0] >= 0.1:
-            return st.write("At a probability score of < 20%, this image is unlikely to contain a Tasmanian Tiger, but the picture appears to share some minor characteristics of a Tasmanian Tiger.")
+            return st.write("At a probability score of < 20%, this image is unlikely to contain a Tasmanian Tiger, but the picture appears to share some minor characteristics of a Tasmanian Tiger. Do you have a clearer picture to try?")
         elif prediction[0][0] < 0.3 and prediction[0][0] >= 0.2:
-            return st.write("At a probability score of < 30%, this image is unlikely to contain a Tasmanian Tiger, but the animal appears to have some characteristics of a Tasmanian Tiger.")
+            return st.write("At a probability score of < 30%, this image appears to have some characteristics of a Tasmanian Tiger. However, it is unlikely to be a Tasmanian Tiger. Do you have a clearer picture to try?")
         elif prediction[0][0] < 0.4 and prediction[0][0] >= 0.3:
-            return st.write("At a probability score of < 40%, this image is unlikely to contain a Tasmanian Tiger, or the picture is not clear enough for a proper classification.")
+            return st.write("At a probability score of < 40%, this image appears to have some characteristics of a Tasmanian Tiger or the picture is not clear enough for a proper classification.")
         elif prediction[0][0] < 0.5 and prediction[0][0] >= 0.4:
-            return st.write("At a probability score of < 50%, this image is unlikely to contain a Tasmanian Tiger, or the picture is not clear enough for a proper classification. There could be a different animal in the picture that closely resembles a Tasmanian Tiger.")
+            return st.write("At a probability score of < 50%, this image appears to have some characteristics of a Tasmanian Tiger, or the picture is not clear enough for a proper classification. There could be a different animal in the picture that closely resembles a Tasmanian Tiger.")
         elif prediction[0][0] < 0.6 and prediction[0][0] >= 0.5:
-            return st.write("At a probability score of < 60%, this image might be a Tasmanian Tiger, or a very good drawing of a Tasmanian Tiger.")
+            return st.write("At a probability score of < 60%, this image has a lot of characteristics shared with a Tasmanian Tiger, or a is very good drawing of a Tasmanian Tiger.")
         elif prediction[0][0] < 0.7 and prediction[0][0] >= 0.6:
-            return st.write("At a probability score of < 70%, this image might be a Tasmanian Tiger, or a very good drawing of a Tasmanian Tiger.")
+            return st.write("At a probability score of < 70%, There is a very high chance that this is a Tasmanian Tiger, or a very good drawing of a Tasmanian Tiger.")
         elif prediction[0][0] < 0.8 and prediction[0][0] >= 0.7:
-            return st.write("You have an interesting picture here as this image might be a Tasmanian Tiger, or a very good drawing of a Tasmanian Tiger.")
+            return st.write("You have an interesting picture here as this image sugests a lot of characteristics shared with a Tasmanian Tiger, or a very good drawing of a Tasmanian Tiger.")
         elif prediction[0][0] < 0.9 and prediction[0][0] >= 0.8:
             return st.write("This is a Tasmanian Tiger or a very good drawing of a Tasmanian Tiger.")
         elif prediction[0][0] < 1.0 and prediction[0][0] >= 0.9:
