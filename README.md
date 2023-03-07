@@ -1,8 +1,13 @@
 # Identifying Tasmanian Tigers using Convolutional Neural Networks
 ## Introduction
-In the Jupyter notebook, I present a deep learning project in which I have developed a Convolutional Neural Network (CNN) to identify the probability of an image containing a Tasmanian Tiger or not. Tasmanian Tigers, also known as thylacines, are extinct carnivorous marsupials that once lived in the wilds of Tasmania, Australia. Despite being declared extinct in the 20th century, there have been many alleged sightings of Tasmanian Tigers, and identifying them from images can help further research and conservation efforts.
+This is a deep learning project in which I have developed a Convolutional Neural Network (CNN) to identify the probability of an image containing a Tasmanian Tiger or not. Tasmanian Tigers, also known as thylacines, are extinct carnivorous marsupials that once lived in the wilds of Tasmania, Australia. Despite being declared extinct in the 20th century, there have been many alleged sightings of Tasmanian Tigers, and identifying them from images can help further research and conservation efforts.
 
-The project involved building a CNN using the TensorFlow and Keras libraries, and training the model on a large dataset of images containing Tasmanian Tigers and other animals that could be confused with them, such as dogs and foxes. The trained model achieved a high accuracy rate and was able to accurately identify Tasmanian Tigers from images with a high level of precision.
+The Deep Learning model has been deployed at the following link: 
+
+[title](https://tasmanian-tiger-image-classifier.streamlit.app/)
+
+![alt text](/app/images/interface.jpg)
+
 
 ## Methodology
 The notebook, provides a step-by-step walkthrough of the project, including some data preprocessing, model building, and training. I also provide a detailed analysis of the results and evaluate the performance of the model. This project is an exciting example of how deep learning techniques can be used to tackle complex problems and could potentially contribute to further research and conservation efforts related to Tasmanian Tigers.
