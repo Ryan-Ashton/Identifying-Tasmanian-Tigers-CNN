@@ -45,7 +45,7 @@ def run():
     st.write("Users who think they have taken a picture of the Tasmanian Tiger but are uncertain about its identity can utilise the app to receive a probability score. The probability score corresponds to the likelihood of the image containing a Tasmanian Tiger, with a higher score indicating a greater likelihood.")
 
     # Add a header for the Image Classifier
-    st.markdown('## Please upload your photo to see it contains a Tasmanian Tiger.')
+    st.markdown('## Please upload your photo to see if it contains a Tasmanian Tiger.')
 
     # Add a file uploader
     uploaded_file = st.file_uploader('Please note that no photos will be saved on our side', type=["png", "jpeg", "jpg"])
