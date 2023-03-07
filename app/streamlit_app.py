@@ -42,7 +42,7 @@ def run():
     st.title("How the App Works")
 
     # Write a description of that App's function
-    st.write("Users who think they have taken a picture of the Tasmanian Tiger but are uncertain about its identity can utilise the app to receive a probability score. The probability score corresponds to the likelihood of the image containing a Tasmanian Tiger, with a higher score indicating a greater likelihood.")
+    st.write("Users who think they have taken a picture of the Tasmanian Tiger but are uncertain about its identity can utilise this app to receive a probability score. The probability score corresponds to the likelihood of the image containing a Tasmanian Tiger, with a higher score indicating a greater likelihood.")
 
     # Add a header for the Image Classifier
     st.markdown('## Please upload your photo to see if it contains a Tasmanian Tiger.')
