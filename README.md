@@ -2,17 +2,17 @@
 ## Introduction
 This is a deep learning project in which I have developed a Convolutional Neural Network (CNN) to identify the probability of an image containing a Tasmanian Tiger or not. Tasmanian Tigers, also known as thylacines, are extinct carnivorous marsupials that once lived in the wilds of Tasmania, Australia. Despite being declared extinct in the 20th century, there have been many alleged sightings of Tasmanian Tigers, and identifying them from images can help further research and conservation efforts.
 
-The Deep Learning model has been deployed at the following link: 
+**This is a Non For Profit Project for the 1000s of people who go looking for the Tasmanian Tiger** 
 
-[title](https://tasmanian-tiger-image-classifier.streamlit.app/)
+The Deep Learning model has been deployed as a Web App at the following link: 
 
+[Click Link to App](https://tasmanian-tiger-image-classifier.streamlit.app/)
+
+## App Interface
 ![alt text](/app/images/interface.jpg)
 
 
 ## Methodology
-The notebook, provides a step-by-step walkthrough of the project, including some data preprocessing, model building, and training. I also provide a detailed analysis of the results and evaluate the performance of the model. This project is an exciting example of how deep learning techniques can be used to tackle complex problems and could potentially contribute to further research and conservation efforts related to Tasmanian Tigers.
-
-While not all the pre-processing steps are included in this repository, I have included the main functions used for image collection and pre-processing in the directory image_collection_helper_functions. These functions helped me to efficiently collect and process a large amount of data and prepare it for use in the training of the CNN model.
 
 For this project, I collected a large dataset of images containing Tasmanian Tigers using a combination of web scraping and computer vision techniques. I used the Python CV (Computer Vision) library to extract screenshots from old footage of the Tasmanian Tiger and collected images from Google Images to build a comprehensive dataset.
 
@@ -42,4 +42,4 @@ After conducting all of these experiments and analyzing the results, I was able 
 - A dataset of ~ 42,000 training images
 - The use of data augmentation strategies including rotation, zooming, horizontal flipping, and width/height shift
 
-**Not all experiments are detailed in this notebook (there was too many!), only the final model will be shown.**
+
