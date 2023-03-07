@@ -2,7 +2,7 @@
 ## Introduction
 This is a deep learning project in which I have developed a Convolutional Neural Network (CNN) to identify the probability of an image containing a Tasmanian Tiger or not. Tasmanian Tigers, also known as thylacines, are extinct carnivorous marsupials that once lived in the wilds of Tasmania, Australia. Despite being declared extinct in the 20th century, there have been many alleged sightings of Tasmanian Tigers, and identifying them from images can help further research and conservation efforts.
 
-**==This is a Non For Profit Project for the 1000s of people who go looking for the Tasmanian Tiger==** 
+> This is a Non-For-Profit Project for the 1000s of people who go looking for the Tasmanian Tiger
 
 The Deep Learning model has been deployed as a Web App at the following link: 
 
