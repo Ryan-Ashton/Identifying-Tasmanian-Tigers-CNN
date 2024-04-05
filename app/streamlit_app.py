@@ -7,8 +7,15 @@ import tensorflow as tf
 from PIL import Image
 import os
 from image_predictor import ImagePredictor
+from keras.models import load_model
+import keras
+# from keras.utils import custom_object_scope
+
+# with custom_object_scope({'RandomHeight': YOUR_CUSTOM_LAYER_CLASS}):
+#     model = load_model(model_path)
 
 import wget
+import requests
 
 # Download the h5 model file from GitHub
 @st.cache_resource
@@ -19,7 +26,9 @@ def model_loading():
     return predictor
 
 
+
 predictor = model_loading()
+
 
 
 # Create a function to run the app
